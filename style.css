@@ -1,0 +1,504 @@
+/* --- GOOGLE FONTS & DESIGN SYSTEM --- */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #d4a373;       /* Warm luxurious gold/amber */
+    --secondary-color: #faedcd;     /* Champagne cream */
+    --accent-color: #ccd5ae;        /* Soft sage accent */
+    --dark-color: #0b0b0d;          /* Pure obsidian background */
+    --bg-card: rgba(19, 19, 22, 0.75); /* Deep glass card background */
+    --border-color: rgba(212, 163, 115, 0.08); /* Warm gold border tint */
+    --text-primary: #f4f4f5;        /* Ultra light grey */
+    --text-secondary: #a1a1aa;      /* Clean muted grey */
+    --transition-smooth: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+html {
+    scroll-behavior: smooth;
+    scrollbar-width: thin;
+    scrollbar-color: var(--primary-color) var(--dark-color);
+}
+
+/* Custom Scrollbar for premium feel */
+::-webkit-scrollbar {
+    width: 6px;
+}
+::-webkit-scrollbar-track {
+    background: var(--dark-color);
+}
+::-webkit-scrollbar-thumb {
+    background: var(--primary-color);
+    border-radius: 10px;
+}
+
+body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background-color: var(--dark-color);
+    color: var(--text-primary);
+    line-height: 1.7;
+    overflow-x: hidden;
+}
+
+/* --- REUSABLE ANCHOR/CONTAINER --- */
+.container {
+    max-width: 680px;
+    margin: 40px auto;
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 24px;
+    padding: 40px;
+    backdrop-filter: blur(20px);
+    box-shadow: 
+        0 20px 50px rgba(0, 0, 0, 0.4),
+        0 0 60px rgba(212, 163, 115, 0.02);
+    animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* --- NAVBAR (CLASSY GLASSMORPHISM) --- */
+.navbar {
+    background: rgba(11, 11, 13, 0.75);
+    backdrop-filter: blur(20px) saturate(180%);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+    padding: 1.25rem 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    transition: var(--transition-smooth);
+}
+
+.navbar .container {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: none;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+    backdrop-filter: none;
+    animation: none;
+}
+
+.logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    letter-spacing: 0.5px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-shadow: 0 2px 10px rgba(212, 163, 115, 0.2);
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-links a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.95rem;
+    letter-spacing: 0.5px;
+    padding: 6px 0;
+    position: relative;
+    transition: var(--transition-smooth);
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 1.5px;
+    background: var(--primary-color);
+    transition: var(--transition-smooth);
+}
+
+.nav-links a:hover {
+    color: var(--primary-color);
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+/* --- HEADER SECTION --- */
+header {
+    text-align: center;
+    margin-bottom: 40px;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 25px;
+}
+
+header h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.2rem;
+    color: var(--primary-color);
+    margin-bottom: 8px;
+}
+
+header p {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    font-style: italic;
+}
+
+/* --- HERO SECTION --- */
+.hero {
+    text-align: center;
+    margin-bottom: 40px;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 40px;
+}
+
+.hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    color: var(--text-secondary);
+    font-size: 1.15rem;
+    margin-bottom: 2rem;
+}
+
+/* --- SECTION TITLE --- */
+.section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.35rem;
+    color: var(--primary-color);
+    margin: 35px 0 20px 0;
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+}
+
+.section-title::after {
+    content: '';
+    flex: 1;
+    margin-left: 15px;
+    height: 1px;
+    background: linear-gradient(90deg, var(--border-color), transparent);
+}
+
+/* --- MENU SECTION --- */
+.menu {
+    background: var(--dark-color);
+    padding: 4rem 0;
+    margin-top: 60px;
+}
+
+.menu .container h2 {
+    text-align: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    margin-bottom: 2.5rem;
+    color: var(--primary-color);
+    text-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+.menu-list {
+    margin-bottom: 45px;
+}
+
+/* --- MENU ITEM (PREMIUM DESIGN CARD) --- */
+.menu-item {
+    margin-bottom: 16px;
+    padding: 16px 20px;
+    background: rgba(255, 255, 255, 0.01);
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.02);
+    border-left: 3px solid var(--primary-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: var(--transition-smooth);
+}
+
+.menu-item:hover {
+    transform: translateY(-3px) scale(1.01);
+    background: rgba(212, 163, 115, 0.04);
+    border-left-width: 5px;
+    border-color: var(--secondary-color);
+    border-right: 1px solid rgba(212, 163, 115, 0.1);
+    box-shadow: 
+        0 10px 25px rgba(0, 0, 0, 0.3),
+        0 0 20px rgba(212, 163, 115, 0.03);
+}
+
+.menu-text {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.menu-name {
+    font-weight: 600;
+    font-size: 1.05rem;
+    color: var(--text-primary);
+    transition: var(--transition-smooth);
+}
+
+.menu-item:hover .menu-name {
+    color: var(--secondary-color);
+}
+
+/* --- INFO BOX & CONTACT DETAILS --- */
+.info-box {
+    background: rgba(255, 255, 255, 0.01);
+    border: 1px solid var(--border-color);
+    padding: 20px;
+    border-radius: 16px;
+    border-left: 3px solid var(--primary-color);
+    margin-bottom: 35px;
+}
+
+.info-box p {
+    margin-bottom: 8px;
+    color: var(--text-secondary);
+}
+
+.info-box p strong {
+    color: var(--text-primary);
+}
+
+.info-box p:last-child {
+    margin-bottom: 0;
+}
+
+.kontak-info {
+    display: grid;
+    gap: 16px;
+    margin-bottom: 30px;
+}
+
+.info-item {
+    background: rgba(255, 255, 255, 0.015);
+    border: 1px solid var(--border-color);
+    padding: 20px;
+    border-radius: 16px;
+    transition: var(--transition-smooth);
+}
+
+.info-item:hover {
+    transform: translateY(-2px);
+    background: rgba(212, 163, 115, 0.02);
+    border-color: rgba(212, 163, 115, 0.2);
+}
+
+/* --- GOOGLE MAPS --- */
+.map-container {
+    margin-top: 30px;
+    border-radius: 20px;
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+    box-shadow: 
+        0 15px 35px rgba(0, 0, 0, 0.3),
+        0 0 30px rgba(212, 163, 115, 0.01);
+    transition: var(--transition-smooth);
+}
+
+.map-container:hover {
+    border-color: rgba(212, 163, 115, 0.2);
+    box-shadow: 
+        0 20px 40px rgba(0, 0, 0, 0.4),
+        0 0 30px rgba(212, 163, 115, 0.05);
+}
+
+.map-container iframe {
+    width: 100%;
+    height: 320px;
+    border: 0;
+    display: block;
+}
+
+/* --- CALL TO ACTION (CTA) BUTTON --- */
+.btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--primary-color) 0%, #b88655 100%);
+    color: #0b0b0d;
+    text-decoration: none;
+    padding: 16px;
+    border-radius: 14px;
+    font-weight: 700;
+    font-size: 1.05rem;
+    border: none;
+    cursor: pointer;
+    transition: var(--transition-smooth);
+    box-shadow: 0 10px 25px rgba(212, 163, 115, 0.15);
+    width: 100%;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 35px rgba(212, 163, 115, 0.3);
+    background: linear-gradient(135deg, var(--secondary-color) 0%, var(--primary-color) 100%);
+}
+
+.btn:active {
+    transform: translateY(-1px);
+}
+
+/* --- FOOTER --- */
+.footer {
+    text-align: center;
+    padding: 3rem 1.5rem;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    background: linear-gradient(180deg, transparent 0%, #060608 100%);
+    border-top: 1px solid var(--border-color);
+}
+
+.footer .container {
+    background: none;
+    border: none;
+    box-shadow: none;
+    padding: 0;
+    margin: 0 auto;
+}
+
+/* --- CONTENT SECTIONS --- */
+.content-section {
+    margin-bottom: 2rem;
+    padding-top: 100px;
+}
+
+section.tentang,
+section.kontak {
+    padding-top: 120px;
+}
+
+.content-section h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.4rem;
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+}
+
+.content-section h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.4rem;
+    color: var(--primary-color);
+    margin: 2.5rem 0 1rem 0;
+}
+
+.content-section p {
+    color: var(--text-secondary);
+    margin-bottom: 1.25rem;
+}
+
+/* --- KEYFRAMES --- */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* --- RESPONSIVE LAYOUTS --- */
+@media (max-width: 1024px) {
+    .container {
+        max-width: 90%;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        margin: 20px auto;
+        padding: 24px;
+        border-radius: 20px;
+    }
+
+    .navbar {
+        padding: 1rem 0;
+    }
+
+    .navbar .container {
+        padding: 0 24px;
+    }
+
+    .logo {
+        font-size: 1.35rem;
+    }
+
+    .nav-links {
+        gap: 1.2rem;
+        font-size: 0.85rem;
+    }
+
+    .nav-links a {
+        padding: 6px 8px;
+    }
+
+    .menu-item {
+        padding: 14px 18px;
+    }
+
+    .content-section h2 {
+        font-size: 2rem;
+    }
+
+    section.tentang,
+    section.kontak {
+        padding-top: 100px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 20px 16px;
+        border-radius: 16px;
+    }
+
+    .navbar .container {
+        padding: 0 16px;
+    }
+
+    .logo {
+        font-size: 1.2rem;
+    }
+
+    .nav-links {
+        gap: 0.75rem;
+    }
+
+    .nav-links a {
+        padding: 4px 6px;
+        font-size: 0.8rem;
+    }
+
+    .hero h1 {
+        font-size: 2.25rem;
+    }
+
+    .menu-item {
+        padding: 12px 14px;
+    }
+
+    .btn {
+        padding: 14px;
+        font-size: 0.95rem;
+    }
+}

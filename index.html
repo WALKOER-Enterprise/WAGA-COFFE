@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Waga Kopi - Seduhan Hangat di Ruang Digital</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .hero-section {
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1e 50%, #2d2d34 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            padding-top: 100px;
+        }
+
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 50%, rgba(139, 69, 19, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(210, 180, 140, 0.05) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .hero-container {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            max-width: 800px;
+            padding: 40px;
+        }
+
+        .hero-section h1 {
+            font-size: 4rem;
+            font-weight: 900;
+            margin-bottom: 1rem;
+            line-height: 1.1;
+            letter-spacing: -2px;
+            background: linear-gradient(135deg, #D2B48C 0%, #F5E6D3 50%, #8B4513 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        .hero-section h1 .subtitle {
+            display: block;
+            font-size: 1.2rem;
+            font-weight: 300;
+            margin-top: 0.5rem;
+            letter-spacing: 3px;
+            color: #8B4513;
+        }
+
+        .hero-section p {
+            font-size: 1.2rem;
+            color: #a0aec0;
+            margin-bottom: 3rem;
+            font-weight: 300;
+        }
+
+        .hero-image {
+            margin: 3rem 0 0 0;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 16px;
+            box-shadow: 
+                0 20px 60px rgba(139, 69, 19, 0.3),
+                0 0 40px rgba(210, 180, 140, 0.2);
+            border: 2px solid rgba(210, 180, 140, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .hero-image img:hover {
+            transform: translateY(-10px);
+            box-shadow: 
+                0 30px 80px rgba(139, 69, 19, 0.4),
+                0 0 60px rgba(210, 180, 140, 0.3);
+        }
+
+        @media (max-width: 768px) {
+            .hero-section {
+                min-height: 80vh;
+                padding: 20px;
+            }
+
+            .hero-container {
+                padding: 30px 20px;
+            }
+
+            .hero-section h1 {
+                font-size: 2.5rem;
+                letter-spacing: -1px;
+            }
+
+            .hero-section h1 .subtitle {
+                font-size: 1rem;
+                letter-spacing: 2px;
+            }
+
+            .hero-section p {
+                font-size: 1rem;
+                margin-bottom: 2rem;
+            }
+
+            .hero-image {
+                margin: 2rem 0 0 0;
+                max-width: 100%;
+            }
+
+            .hero-image img {
+                border-radius: 12px;
+                box-shadow: 0 15px 40px rgba(139, 69, 19, 0.2);
+            }
+
+            .hero-image img:hover {
+                transform: translateY(-5px);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-section {
+                min-height: 70vh;
+                padding: 15px;
+            }
+
+            .hero-container {
+                padding: 20px 15px;
+            }
+
+            .hero-section h1 {
+                font-size: 1.8rem;
+                line-height: 1.2;
+                letter-spacing: 0;
+            }
+
+            .hero-section h1 .subtitle {
+                font-size: 0.9rem;
+                letter-spacing: 1px;
+                margin-top: 0.3rem;
+            }
+
+            .hero-section p {
+                font-size: 0.9rem;
+                margin-bottom: 1.5rem;
+            }
+
+            .hero-image {
+                margin: 1.5rem 0 0 0;
+            }
+
+            .hero-image img {
+                border-radius: 10px;
+                box-shadow: 0 10px 25px rgba(139, 69, 19, 0.15);
+            }
+        }
+    </style>
+</head>
+<body> 
+    <!-- Header/Navbar -->
+    <header class="navbar">
+        <div class="container">
+            <div class="logo">☕ Waga Coffee</div>
+            <nav class="nav-links">
+                <a href="index.html">🏠 Beranda</a>
+                <a href="menu.html">📜 Menu</a>
+                <a href="tentang.html">📖 Tentang</a>
+                <a href="kontak.html">📞 Kontak</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="hero-container">
+            <h1>
+                <br> WAGA<br>
+                <span class="subtitle">COFFEE</span>
+            </h1>
+            <p>Sederhana, Hangat, dan Menenangkan</p>
+            <div class="hero-image">
+                <img src="WAGA-COFFE.jpeg" alt="Waga Kopi">
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        &copy; 2026 Waga Kopi. | Developed by WALKOER ☕
+    </footer>
+</body>
+</html>
